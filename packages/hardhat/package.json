@@ -1,10 +1,13 @@
 {
   "name": "hardhat",
   "version": "1.0.0",
+  "license": "UNLICENSED",
   "scripts": {
-    "chain":  "yarn run hardhat node"
+    "chain": "yarn run hardhat node"
   },
   "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "ethers": "^5.0.0",
     "hardhat": "^2.10.1",
     "ts-node": "^10.9.1"
   }
