@@ -1,3 +1,5 @@
+require("@nomiclabs/hardhat-ethers")
+
 import { HardhatUserConfig } from "hardhat/config";
 
 const config: HardhatUserConfig = {

@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "license": "UNLICENSED",
   "dependencies": {
     "next": "12.2.3",
     "react": "18.2.0",
