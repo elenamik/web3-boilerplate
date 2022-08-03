@@ -1,0 +1,11 @@
+{
+  "name": "hardhat",
+  "version": "1.0.0",
+  "scripts": {
+    "chain":  "yarn run hardhat node"
+  },
+  "devDependencies": {
+    "hardhat": "^2.10.1",
+    "ts-node": "^10.9.1"
+  }
+}
