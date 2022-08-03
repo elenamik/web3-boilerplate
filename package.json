@@ -5,6 +5,7 @@
   "scripts": {
     "w:hardhat": "yarn workspace hardhat",
     "w:ui": "yarn workspace ui",
-    "start": "yarn w:ui dev"
+    "start": "yarn w:ui dev",
+    "chain": "yarn w:hardhat chain"
   }
 }
