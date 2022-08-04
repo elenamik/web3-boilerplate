@@ -1,44 +1,49 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
 import { useMoralis } from "react-moralis";
 
-
 const Home: NextPage = () => {
-   const { authenticate, isAuthenticated, isAuthenticating, user, account, logout } = useMoralis();
+  const {
+    authenticate,
+    isAuthenticated,
+    isAuthenticating,
+    user,
+    account,
+    logout,
+  } = useMoralis();
 
-    const login = async () => {
-        if (!isAuthenticated) {
-
-            await authenticate({signingMessage: "Log in using Moralis" })
-                .then(function (user) {
-                    console.log("logged in user:", user);
-                    console.log(user!.get("ethAddress"));
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-        }
+  const login = async () => {
+    if (!isAuthenticated) {
+      await authenticate({ signingMessage: "Log in using Moralis" })
+        .then(function (user) {
+          console.log("logged in user:", user);
+          console.log(user!.get("ethAddress"));
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     }
+  };
 
-    const logOut = async () => {
-        await logout();
-        console.log("logged out");
-    }
+  const logOut = async () => {
+    await logout();
+    console.log("logged out");
+  };
 
-    return (
+  return (
     <div className={styles.container}>
-        <button onClick={login}>Moralis Metamask Login</button>
-        <button onClick={logOut} disabled={isAuthenticating}>Logout</button>
+      <button onClick={login}>Moralis Metamask Login</button>
+      <button onClick={logOut} disabled={isAuthenticating}>
+        Logout
+      </button>
 
-        {JSON.stringify(user)}
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
-
-
+      {JSON.stringify(user)}
+      <p className={styles.description}>
+        Get started by editing{" "}
+        <code className={styles.code}>pages/index.tsx</code>
+      </p>
 
       <footer className={styles.footer}>
         <a
@@ -46,14 +51,14 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
