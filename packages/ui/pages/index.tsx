@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useMoralis } from "react-moralis";
+import * as React from "react";
 
 const Home: NextPage = () => {
   const {
