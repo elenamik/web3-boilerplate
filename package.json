@@ -1,11 +1,11 @@
 {
-  "name": "forest-nfts",
+  "name": "web3-boilerplate",
   "license": "UNLICENSED",
   "private": true,
-  "workspaces": { "packages": ["packages/ui", "packages/hardhat"]},
+  "workspaces": ["packages/ui", "packages/hardhat"],
   "scripts": {
-    "w:hardhat": "yarn workspace hardhat",
-    "w:ui": "yarn workspace ui",
+    "w:hardhat": "yarn workspace @web3-boilerplate/hardhat",
+    "w:ui": "yarn workspace @web3-boilerplate/ui",
     "dev": "yarn w:ui dev",
     "chain": "yarn w:hardhat chain",
     "contracts:compile":"yarn w:hardhat hardhat compile",
