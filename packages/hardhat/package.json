@@ -7,8 +7,13 @@
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "@typechain/ethers-v5": "^10.1.0",
+    "@typechain/hardhat": "^6.1.2",
+    "deploy": "^1.0.3",
     "ethers": "^5.0.0",
     "hardhat": "^2.10.1",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "typechain": "^8.1.0",
+    "hardhat-deploy": "0.11.12"
   }
 }

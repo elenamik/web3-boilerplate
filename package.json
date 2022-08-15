@@ -9,6 +9,7 @@
     "dev": "yarn w:ui dev",
     "chain": "yarn w:hardhat chain",
     "contracts:compile":"yarn w:hardhat hardhat compile",
-    "contracts:deploy":"yarn w:hardhat hardhat run scripts/deploy.ts"
+    "contracts:deploy":"yarn w:hardhat hardhat deploy",
+    "facuet":"yarn w:hardhat hardhat faucet"
   }
 }

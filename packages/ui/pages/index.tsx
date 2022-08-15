@@ -1,9 +1,11 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useMoralis } from "react-moralis";
 import * as React from "react";
+import { ethers } from "ethers";
+import { Lock } from "../../hardhat/typechain-types/";
+import LockContract from "../../hardhat/artifacts/contracts/Lock.sol/Lock.json";
 
 const Home: NextPage = () => {
   const {
@@ -14,6 +16,27 @@ const Home: NextPage = () => {
     account,
     logout,
   } = useMoralis();
+
+  const provider = new ethers.providers.JsonRpcProvider(
+    "http://localhost:8545"
+  );
+
+  console.log(process.env.NEXT_PUBLIC_TARGET_NETWORK);
+  const bal = async () => {
+    const balance = ethers.utils.formatEther(
+      await provider.getBalance("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266")
+    );
+
+    const contract = new ethers.Contract(
+      LockContract.address,
+      LockContract.abi,
+      provider
+    );
+    console.log(contract);
+    const contractBal = await provider.getBalance(contract.address);
+    console.log(ethers.utils.formatEther(contractBal));
+  };
+  bal();
 
   const login = async () => {
     if (!isAuthenticated) {
