@@ -1,5 +1,4 @@
-const hre = require("hardhat");
-const { ethers } = hre;
+import { ethers } from "hardhat";
 
 async function main() {
   const currentTimestampInSeconds = Math.round(Date.now() / 1000);
@@ -11,7 +10,9 @@ async function main() {
   const Lock = await ethers.getContractFactory("Lock");
   const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
 
+  console.log('LOCK',lock)
   await lock.deployed();
+  console.log('LOCK2',lock)
 
   console.log("Lock with 1 ETH deployed to:", lock.address);
 }
