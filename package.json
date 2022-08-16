@@ -4,11 +4,11 @@
   "private": true,
   "workspaces": ["packages/ui", "packages/hardhat"],
   "scripts": {
-    "w:hardhat": "yarn workspace @web3-boilerplate/hardhat",
+    "w:hh": "yarn workspace @web3-boilerplate/hardhat",
     "w:ui": "yarn workspace @web3-boilerplate/ui",
-    "dev": "yarn w:ui dev",
-    "chain": "yarn w:hardhat chain",
-    "contracts:compile":"yarn w:hardhat hardhat compile",
-    "contracts:deploy":"yarn w:hardhat hardhat run scripts/deploy.ts"
+    "ui:dev": "yarn w:ui dev",
+    "hh:chain": "yarn w:hh chain",
+    "hh:compile":"yarn w:hh hardhat compile",
+    "hh:deploy":"yarn w:hh hardhat run scripts/deploy.ts"
   }
 }
